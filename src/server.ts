@@ -3,6 +3,7 @@ import "dotenv/config";
 import { connectDB } from "./config/db";
 import { userRouter } from "./routes/userRoutes";
 import { bookRouter } from "./routes/bookRoutes";
+import { adminRouter } from "./routes/adminRoutes";
 // import { BookModel } from "./model/bookmodel";
 
 const PORT = process.env.PORT;
@@ -20,6 +21,7 @@ connectDB()
 
 app.use("/api", bookRouter);
 app.use("/api", userRouter);
+app.use("/api", adminRouter);
 
 app.listen(PORT, () => {
   console.log(`Server is here on http://localhost:${PORT}`);

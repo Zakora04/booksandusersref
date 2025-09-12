@@ -118,3 +118,92 @@ export const deleteOneBook = async (
     res.status(500).json({ message: "An error occurred", err: err.message });
   }
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import express, { Request, Response } from "express";
+// import { Book, BookModel } from "../model/bookmodel";
+
+// export const createBook = async (
+//   req: Request,
+//   res: Response
+// ): Promise<void> => {
+//   try {
+//     const { title, category, yearPublished, author } = req.body;
+//     if (!title || !category || !yearPublished || !author) {
+//       res.status(400).json({ message: "Please fill all fields" });
+//     }
+//     const checkifbookExists = await BookModel.findOne({ author });
+//     if (!checkifbookExists) {
+//       res.status(401).json({ message: "Author does not exist" });
+//     }
+//     const Bookcreation = await BookModel.create({
+//       title,
+//       category,
+//       yearPublished,
+//       author,
+//     });
+//     res
+//       .status(201)
+//       .json({ message: "Book created successfully", data: Bookcreation });
+//   } catch (err) {
+//     res.status(500).json({ message: "An error occured" });
+//   }
+// };
+
+// export const Getbooks = async (req: Request, res: Response): Promise<void> => {
+//   try {
+//     const getbooks = BookModel.find();
+//     if (!getbooks) {
+//       res.status(400).json({ message: "Books not found", data: getbooks });
+//     }
+//     res.status(200).json({ message: "Books gotten successfully" });
+//   } catch (err) {
+//     res.status(500).json({ message: "An error occurred" });
+//   }
+// };
+
+// export const Getabook = async (req: Request, res: Response): Promise<void> => {
+//   try {
+//     const { id } = req.params;
+//     const getabook = await BookModel.findById(id);
+//     if (!getabook) {
+//       res.status(404).json({ message: "Book not found" });
+//     }
+//     res
+//       .status(200)
+//       .json({ message: "Book gottrn successfully", data: getabook });
+//   } catch (err: any) {
+//     res.status(500).json({ message: "An error occurred", err: err.message });
+//   }
+// };
+
+// export const upadteonebook = async (
+//   req: Request,
+//   res: Response
+// ): Promise<void> => {
+//   try {
+//     const { title, yearPublished, category, author } =
+//       req.body as Partial<Book>;
+
+//     const updateonebook = await BookModel.findByIdAndUpdate(
+//       req.params.id,
+//       { title, yearPublished, category, author },
+//       { new: true }
+//     );
+//   } catch(err) {
+//     res.status(500).json({message:"An err occurred"})
+//   }
+// };
+
+

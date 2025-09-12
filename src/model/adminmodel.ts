@@ -1,27 +1,25 @@
 import "dotenv/config";
 import mongoose, { model, Schema } from "mongoose";
 
-export interface IUser extends Document {
+export interface IAdmin extends Document {
   name: string;
   password: string;
   email: string;
   phoneNumber: string;
-  books: mongoose.Types.ObjectId[];
+  role: string;
   isLogin: boolean;
-  role:string
 }
 
-const UserSchema = new mongoose.Schema<IUser>(
+const AdminSchema = new mongoose.Schema<IAdmin>(
   {
     name: { type: String, required: true },
     password: { type: String, required: true },
     email: { type: String, required: true, unique: true },
     phoneNumber: { type: String, required: true, unique: true },
-    books: [{ type: mongoose.Types.ObjectId, ref: "book" }],
+    role: { type: String, default: "admin" },
     isLogin: { type: Boolean, default: false },
-    role: { type: String, default: "user" },
   },
   { timestamps: true }
 );
 
-export const Usermodel = mongoose.model<IUser>("MyUsers", UserSchema);
+export const Adminmodel = mongoose.model<IAdmin>("Admins", AdminSchema);
