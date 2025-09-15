@@ -1,0 +1,1 @@
+{"version":3,"file":"userLoggerMiddleware.d.ts","sourceRoot":"","sources":["../../src/middleware/userLoggerMiddleware.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,OAAO,EAAE,QAAQ,EAAE,YAAY,EAAE,MAAM,SAAS,CAAC;AAG1D,eAAO,MAAM,oBAAoB,GAAI,KAAK,OAAO,EAAE,KAAK,QAAQ,EAAE,MAAM,YAAY,SAGnF,CAAC"}
