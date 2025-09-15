@@ -61,8 +61,8 @@ const LoginUser = async (req, res) => {
             message: "Login successful",
             name: checkLogin.name,
             email: checkLogin.email,
-            password: checkLogin.password,
-            phoneNumber: checkLogin.phoneNumber
+            phoneNumber: checkLogin.phoneNumber,
+            token
         });
     }
     catch (err) {
