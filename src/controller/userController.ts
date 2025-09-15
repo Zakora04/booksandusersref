@@ -67,8 +67,8 @@ export const LoginUser = async (req: Request, res: Response): Promise<void> => {
       message: "Login successful",
       name: checkLogin.name,
       email: checkLogin.email,
-      password:checkLogin.password,
-      phoneNumber:checkLogin.phoneNumber
+      phoneNumber: checkLogin.phoneNumber,
+      token
 
     });
   } catch (err: any) {
